@@ -1,0 +1,29 @@
+extends ./../layout/main
+
+block content
+    div(class="col-xs-12 col-md-12")
+        h1 List all users
+        br
+        table(class="table table-bordered")
+            thead
+                tr
+                    th Name 
+                    th UserName
+                    th Email
+                    th Actions
+            tbody
+                if users.length > 0
+                each user  in users
+                    tr
+                        td= user.name
+                        td= user.username
+                        td= user.email
+                        td
+                            form(action="/users/" + user._id + "/?_method=DELETE", method ="POST")
+                                button(type="submit" class="btn btn-primary") Delete
+                else
+                    td(colspan="4") Nothing user               
+        br
+        div(class="col-xs-2 col-md-2 float-right")
+            a(href="/users/new" class="btn btn-success") New User
+

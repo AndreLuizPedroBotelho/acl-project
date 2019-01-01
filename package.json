@@ -1,0 +1,29 @@
+{
+  "name": "auth_node_passport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "André Luiz Pedro Botelho",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.2.1",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "jquery": "^3.3.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.4.1",
+    "mongoose-type-email": "1.0.5",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-http": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "popper.js": "^1.14.6",
+    "pug": "^2.0.3"
+  }
+}
