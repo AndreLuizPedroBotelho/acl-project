@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
-
+const acl = require('express-acl')
 
 const app = express();
 
@@ -33,11 +33,26 @@ app.use(passport.session());
 app.set('view engine','pug');
 app.set('views',path.join(__dirname,'src/view'))
 
+mongoose.connect('mongodb://localhost:27017/acl', { useNewUrlParser: true });
+//mongoose.Promise = global.Promise;
+
+acl.config({
+    filename: '/src/acl.json',
+    baseUrl: '/',
+    denyCallback: (res) => {
+        console.log(res)
+        return res.status(403).json({
+          status: 'Access Denied',
+          success: false,
+          message: 'You are not authorized to access this resource'
+        });
+    }
+})
+
+app.use(acl.authorize)
 require('./src/index')(app, passport);
 
-mongoose.connect('mongodb://localhost:27017/auth', { useNewUrlParser: true });
-mongoose.Promise = global.Promise;
-
-app.listen(9000,()=>{
-    console.log('Express has been started');
+const PORT = 9000;
+app.listen(PORT, ()=>{
+    console.log('Express has been started at ${PORT}');
 })

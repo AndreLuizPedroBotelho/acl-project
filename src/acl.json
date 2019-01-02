@@ -1,0 +1,47 @@
+[
+    {
+        "group": "user",
+        "permissions": [
+          {
+            "resource": "*",
+            "methods": "*",
+            "action": "deny"
+          }
+        ]
+    },     
+    {
+        "group": "guest",
+        "permissions":[
+            {
+                "resource": "/users/new",
+                "methods": ["GET"],
+                "action":  "allow"
+            },
+            {
+                "resource": "/users",
+                "methods": "*",
+                "action":  "allow"
+            },
+            {
+                "resource": "/",
+                "methods": ["GET"],
+                "action":  "allow"
+            },
+            {
+                "resource": "/auth/*",
+                "methods": ["GET","POST"],
+                "action":  "allow"
+            },
+            {
+                "resource": "/scripts/*",
+                "methods": ["GET"],
+                "action":  "allow"
+            },
+            {
+                "resource": "/style/*",
+                "methods": ["GET"],
+                "action":  "allow"
+            }
+        ]
+    }
+]

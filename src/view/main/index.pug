@@ -6,11 +6,12 @@ block content
             a(class="float-right" href="/auth/logout") Logout
         h1(class="text-center") Home Page 
         if (user)
-            h4(class="text-center") Hello #{user.name}
+            h4(class="text-center") Hello #{user.name} #{user.role}
     br
     div(class="col-xs-12.col-md-12 float-right")
         if(user)
-            h2 You are logged in
+            h2 You are logged in 
+            a(href='/users') Users
         else        
             h2 Please log in
             a(href ='/auth') Click here

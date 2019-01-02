@@ -6,7 +6,7 @@ module.exports = (passport) => {
     
     router.post('/login',  passport.authenticate(('local-signin'),{
         successRedirect: '/',
-        failureRedirect: '/users',
+        failureRedirect: '/auth',
     }));
     
     router.get('/logout', require('./logout'));

@@ -13,6 +13,10 @@ block content
             div(class="form-group")
                 input(type="password", name="password", placeholder="Password:", class="form-control")
             div(class="form-group")
+                select(name="role",id ="role",class="form-control")            
+                    option(value="admin") Admin
+                    option(value="user") User
+            div(class="form-group")
                 button(type="submit", class="btn btn-primary") Create
                 | &nbsp;
                 a(href="/users" class="btn btn-success") Back
