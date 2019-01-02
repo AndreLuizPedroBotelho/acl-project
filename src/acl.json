@@ -5,7 +5,7 @@
           {
             "resource": "*",
             "methods": "*",
-            "action": "deny"
+            "action": "allow"
           }
         ]
     },     
@@ -15,11 +15,6 @@
             {
                 "resource": "/users/new",
                 "methods": ["GET"],
-                "action":  "allow"
-            },
-            {
-                "resource": "/users",
-                "methods": "*",
                 "action":  "allow"
             },
             {

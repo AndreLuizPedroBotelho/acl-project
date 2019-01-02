@@ -40,7 +40,6 @@ acl.config({
     filename: '/src/acl.json',
     baseUrl: '/',
     denyCallback: (res) => {
-        console.log(res)
         return res.status(403).json({
           status: 'Access Denied',
           success: false,
@@ -54,5 +53,5 @@ require('./src/index')(app, passport);
 
 const PORT = 9000;
 app.listen(PORT, ()=>{
-    console.log('Express has been started at ${PORT}');
+    console.log(`Express has been started at ${PORT}`);
 })
