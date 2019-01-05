@@ -27,7 +27,7 @@ app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended:false})); 
 app.use(bodyParser.json()); 
 
-app.use(favicon(path.join(__dirname,'dist','images','nodejs.ico')));
+app.use(favicon(path.join(__dirname,'dist','images','favicon.ico')));
 
 app.use(methodOverride('_method'));
 app.use(session({ secret: '!@#DJKALSHDJKA#@!#!@', resave: false, saveUninitialized: true }))
