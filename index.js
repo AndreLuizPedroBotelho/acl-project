@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 const acl = require('express-acl')
+var favicon = require('serve-favicon');
 
 const app = express();
 
@@ -24,7 +25,9 @@ app.use(morgan('dev'));
 
 //Configuiração do body Parser
 app.use(bodyParser.urlencoded({extended:false})); 
-app.use(bodyParser.json());  
+app.use(bodyParser.json()); 
+
+app.use(favicon(path.join(__dirname,'dist','images','nodejs.ico')));
 
 app.use(methodOverride('_method'));
 app.use(session({ secret: '!@#DJKALSHDJKA#@!#!@', resave: false, saveUninitialized: true }))
